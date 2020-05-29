@@ -1419,6 +1419,7 @@ GameObject:
   - component: {fileID: 1021757850}
   - component: {fileID: 1021757851}
   - component: {fileID: 1021757847}
+  - component: {fileID: 1021757852}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -1615,6 +1616,19 @@ CircleCollider2D:
   m_Offset: {x: -0.099999994, y: -2.8737051}
   serializedVersion: 2
   m_Radius: 0.36507544
+--- !u!114 &1021757852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021757843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e54fdd8aee90ef4e9278cc62bdb7cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentInterObject: {fileID: 0}
 --- !u!1 &1160728392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1657,9 +1671,10 @@ GameObject:
   - component: {fileID: 1190264705}
   - component: {fileID: 1190264704}
   - component: {fileID: 1190264707}
+  - component: {fileID: 1190264708}
   m_Layer: 10
   m_Name: 1_bed_0
-  m_TagString: Untagged
+  m_TagString: Hot_spots
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1771,6 +1786,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.680436, y: 6.71}
   m_EdgeRadius: 0
+--- !u!114 &1190264708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190264703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f6f9e898b0c74418beb0efbeb236f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1302764053
 GameObject:
   m_ObjectHideFlags: 0
@@ -2608,7 +2635,7 @@ GameObject:
   - component: {fileID: 1783739996}
   m_Layer: 10
   m_Name: 1_door_sprite
-  m_TagString: Untagged
+  m_TagString: Hot_spots
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2713,9 +2740,10 @@ GameObject:
   - component: {fileID: 1897512244}
   - component: {fileID: 1897512243}
   - component: {fileID: 1897512246}
+  - component: {fileID: 1897512247}
   m_Layer: 10
   m_Name: 1_blobs_0
-  m_TagString: Untagged
+  m_TagString: Hot_spots
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2827,6 +2855,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.9270585, y: 6.71}
   m_EdgeRadius: 0
+--- !u!114 &1897512247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897512242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f6f9e898b0c74418beb0efbeb236f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1925595425
 GameObject:
   m_ObjectHideFlags: 0
@@ -3103,9 +3143,10 @@ GameObject:
   - component: {fileID: 2044161792}
   - component: {fileID: 2044161791}
   - component: {fileID: 2044161794}
+  - component: {fileID: 2044161795}
   m_Layer: 10
   m_Name: 1_tv_0
-  m_TagString: Untagged
+  m_TagString: Hot_spots
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3218,6 +3259,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.0443563, y: 6.71}
   m_EdgeRadius: 0
+--- !u!114 &2044161795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044161790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f6f9e898b0c74418beb0efbeb236f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2103008660
 GameObject:
   m_ObjectHideFlags: 0
@@ -3230,9 +3283,10 @@ GameObject:
   - component: {fileID: 2103008662}
   - component: {fileID: 2103008661}
   - component: {fileID: 2103008664}
+  - component: {fileID: 2103008665}
   m_Layer: 10
   m_Name: 1_tree_0
-  m_TagString: Untagged
+  m_TagString: Hot_spots
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3331,7 +3385,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.08843827, y: 0}
+  m_Offset: {x: 0.2602108, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3342,8 +3396,20 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.1326632, y: 13.42}
+  m_Size: {x: 3.7891183, y: 13.42}
   m_EdgeRadius: 0
+--- !u!114 &2103008665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103008660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f6f9e898b0c74418beb0efbeb236f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2104957152
 GameObject:
   m_ObjectHideFlags: 0
@@ -3356,9 +3422,10 @@ GameObject:
   - component: {fileID: 2104957154}
   - component: {fileID: 2104957153}
   - component: {fileID: 2104957156}
+  - component: {fileID: 2104957157}
   m_Layer: 10
   m_Name: 1_rock_0
-  m_TagString: Untagged
+  m_TagString: Hot_spots
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3457,7 +3524,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5686188, y: 0}
+  m_Offset: {x: -0.96620476, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3468,8 +3535,20 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.7712793, y: 6.71}
+  m_Size: {x: 3.5354478, y: 6.71}
   m_EdgeRadius: 0
+--- !u!114 &2104957157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104957152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f6f9e898b0c74418beb0efbeb236f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2106086451
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,20 +9,18 @@ public class PlayerMovement : MonoBehaviour
     public float walkSpeed = 40f;
     public Animator animator;
 
+
     float horizontalMove = 0f;
     bool interaction = false;
 
     // Update is called once per frame
     void Update()
     {
+        interaction = false;
+
         horizontalMove = Input.GetAxisRaw("Horizontal") * walkSpeed;
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-
-        if (Input.GetButtonDown("Interact"))
-        {
-            interaction = true;
-        }
     }
 
     
@@ -33,21 +31,24 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    /*
+    private void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("hit detected (player)");
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        //Debug.Log("Hit detected!");
-        //  && interaction == true
-
-        
-        if (other.tag == "Player")
+        if (Input.GetButtonDown("Interact"))
         {
-            Debug.Log("Hit detected!");
-            // other.GetComponent<Renderer>().enabled = false;
+            interaction = true;
+            Debug.Log("true");
+            this.GetComponent<Renderer>().enabled = false;
         }
-        else
-        {
-            // other.GetComponent<Renderer>().enabled = true;
+        
+
+        if (Input.GetButtonUp("Interact")) {
+            interaction = false;
+            Debug.Log("false");
+            this.GetComponent<Renderer>().enabled = true;
         }
     }
+    */
+
 }
