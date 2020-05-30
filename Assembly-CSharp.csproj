@@ -60,7 +60,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Appearance.cs" />
+    <Compile Include="Assets\Blobs_text_appearance.cs" />
     <Compile Include="Assets\CharacterController2D.cs" />
+    <Compile Include="Assets\door_behaviour.cs" />
     <Compile Include="Assets\Interaction_Object.cs" />
     <Compile Include="Assets\Player_interact.cs" />
     <Compile Include="Assets\PlayerMovement.cs" />
