@@ -60,15 +60,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Appearance.cs" />
-    <Compile Include="Assets\Blobs_text_appearance.cs" />
-    <Compile Include="Assets\CharacterController2D.cs" />
-    <Compile Include="Assets\door_behaviour.cs" />
-    <Compile Include="Assets\Interaction_Object.cs" />
-    <Compile Include="Assets\Player_interact.cs" />
-    <Compile Include="Assets\PlayerMovement.cs" />
-    <Compile Include="Assets\screen_size.cs" />
-    <Compile Include="Assets\scri.cs" />
+    <Compile Include="Assets\Scripts\Appearance.cs" />
+    <Compile Include="Assets\Scripts\Blobs_text_appearance.cs" />
+    <Compile Include="Assets\Scripts\CharacterController2D.cs" />
+    <Compile Include="Assets\Scripts\door_behaviour.cs" />
+    <Compile Include="Assets\Scripts\Interaction_Object.cs" />
+    <Compile Include="Assets\Scripts\Player_interact.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\screen_size.cs" />
+    <Compile Include="Assets\Scripts\scri.cs" />
+    <Compile Include="Assets\Scripts\Stats\CharacterStats.cs" />
+    <Compile Include="Assets\Scripts\Stats\Stat.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Panu/Desktop/Projects/DEV_olution/DEV_olution/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
