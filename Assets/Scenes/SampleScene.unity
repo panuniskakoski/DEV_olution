@@ -2704,7 +2704,7 @@ MonoBehaviour:
   attack_multiplier: 10
   woodcut_xp_gain: 3
   woodcut_multiplier: 10
-  fun_xp_gain: 1
+  fun_xp_gain: 3
   fun_multiplier: 10
   resting: 0
   having_fun: 0

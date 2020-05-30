@@ -103,8 +103,6 @@ public class CharacterStats : MonoBehaviour
 
     private void Update()
     {
-        // Lasketaan mikä on ko. tierin max xp ennen level uppia
-        CalculateMaxXp();
 
         if (resting)
         {
@@ -137,11 +135,16 @@ public class CharacterStats : MonoBehaviour
             {
                 currentFun += fun_xp_gain * Time.deltaTime;
                 funBar.value = currentFun / fun_multiplier;
-
-                xpBar.value += currentFun / fun_multiplier;
             }
             else
             {
+                // Jos eka kierros, niin saa xp
+                if (!fun_maxed)
+                {
+                    currentXp += 0.25f;
+                    xpBar.value = currentXp;
+                }
+
                 fun_maxed = true;
                 fun_maxed_text.GetComponent<Renderer>().enabled = true;
             }
@@ -158,6 +161,13 @@ public class CharacterStats : MonoBehaviour
             }
             else
             {
+                // Jos eka kierros, niin saa xp
+                if (!mining_maxed)
+                {
+                    currentXp += 0.25f;
+                    xpBar.value = currentXp;
+                }
+
                 mining_maxed = true;
                 mining_maxed_text.GetComponent<Renderer>().enabled = true;
             }
@@ -174,6 +184,13 @@ public class CharacterStats : MonoBehaviour
             }
             else
             {
+                // Jos eka kierros, niin saa xp
+                if (!woodcut_maxed)
+                {
+                    currentXp += 0.25f;
+                    xpBar.value = currentXp;
+                }
+
                 woodcut_maxed = true;
                 woodcut_maxed_text.GetComponent<Renderer>().enabled = true;
             }
@@ -190,20 +207,19 @@ public class CharacterStats : MonoBehaviour
             }
             else
             {
+                // Jos eka kierros, niin saa xp
+                if (!attacking_maxed)
+                {
+                    currentXp += 0.25f;
+                    xpBar.value = currentXp;
+                }
+
                 attacking_maxed = true;
                 attack_maxed_text.GetComponent<Renderer>().enabled = true;
                 peace_sign.GetComponent<Renderer>().enabled = true;
             }
         }
 
-
-
-
-    }
-
-    public void CalculateMaxXp()
-    {
-        maxXp = maxFun + maxMining + maxAttack + maxWoodcut;
     }
 
 }
