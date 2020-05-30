@@ -31,6 +31,27 @@ public class Player_interact : MonoBehaviour
             {
                 characterStats.resting = true;
             }
+
+            if (currentInterObject.name == "1_tv")
+            {
+                characterStats.having_fun = true;
+            }
+
+            if (currentInterObject.name == "1_rock")
+            {
+                characterStats.mining_rock = true;
+            }
+
+            if (currentInterObject.name == "1_tree")
+            {
+                characterStats.cutting_wood = true;
+            }
+
+            if (currentInterObject.name == "1_blobs")
+            {
+                characterStats.attacking_blobs = true;
+            }
+
         }
 
         if (Input.GetButtonUp("Interact") && currentInterObject)
@@ -42,6 +63,26 @@ public class Player_interact : MonoBehaviour
             if (currentInterObject.name == "1_bed")
             {
                 characterStats.resting = false;
+            }
+
+            if (currentInterObject.name == "1_tv")
+            {
+                characterStats.having_fun = false;
+            }
+
+            if (currentInterObject.name == "1_rock")
+            {
+                characterStats.mining_rock = false;
+            }
+
+            if (currentInterObject.name == "1_tree")
+            {
+                characterStats.cutting_wood = false;
+            }
+
+            if (currentInterObject.name == "1_blobs")
+            {
+                characterStats.attacking_blobs = false;
             }
         }
 
