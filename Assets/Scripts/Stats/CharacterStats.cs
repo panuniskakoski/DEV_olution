@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharacterStats : MonoBehaviour
 {
@@ -55,6 +56,8 @@ public class CharacterStats : MonoBehaviour
 
     public bool gaining_xp = false;
 
+    public bool lvl_up_engaged = false;
+
     // Skillien sliderit
     public Slider restBar;
     public Slider funBar;
@@ -65,11 +68,14 @@ public class CharacterStats : MonoBehaviour
 
     public GameObject player;
 
+    private GameObject lvl_up;
+
     public GameObject fun_maxed_text;
     public GameObject mining_maxed_text;
     public GameObject woodcut_maxed_text;
     public GameObject attack_maxed_text;
     public GameObject peace_sign;
+    public GameObject lvlUp_icon;
 
     public Stat rest;
     public Stat xp;
@@ -89,6 +95,8 @@ public class CharacterStats : MonoBehaviour
         attack_maxed_text = GameObject.Find("maxed_text_attack");
         woodcut_maxed_text = GameObject.Find("maxed_text_woodcut");
 
+        lvl_up = GameObject.Find("LVLup_icon");
+
         restBar = GameObject.Find("RestBar").GetComponent<Slider>();
         funBar = GameObject.Find("FunBar").GetComponent<Slider>();
         miningBar = GameObject.Find("MiningBar").GetComponent<Slider>();
@@ -103,7 +111,33 @@ public class CharacterStats : MonoBehaviour
 
     private void Update()
     {
+        checkIfResting();
+        checkIfMining();
+        checkIfAttacking();
+        checkIfHavingFun();
+        checkIfWoodcut();
 
+        checkLvlUp();
+    }
+
+    public void checkLvlUp()
+    {
+        if (xpBar.value >= maxXp)
+        {
+            lvl_up.GetComponent<Renderer>().enabled = true;
+
+            
+            // Animaatio lvl_upille
+
+            if (true)
+            {
+                SceneManager.LoadScene(1);
+            }
+        }
+    }
+
+    public void checkIfResting()
+    {
         if (resting)
         {
             if (currentRest < 100)
@@ -118,7 +152,7 @@ public class CharacterStats : MonoBehaviour
         {
             currentRest -= drain_speed * Time.deltaTime;
             rest.baseValue = currentRest;
-            restBar.value = (currentRest/100);
+            restBar.value = (currentRest / 100);
             if (currentRest < 0)
             {
                 Debug.Log("Energia loppui");
@@ -126,30 +160,10 @@ public class CharacterStats : MonoBehaviour
                 // Tänne animaatio. Heiluttaa käsiä + teksti "ei jaksa enää"
             }
         }
+    }
 
-        if (having_fun)
-        {
-            fun.baseValue = currentFun;
-
-            if (funBar.value < maxFun)
-            {
-                currentFun += fun_xp_gain * Time.deltaTime;
-                funBar.value = currentFun / fun_multiplier;
-            }
-            else
-            {
-                // Jos eka kierros, niin saa xp
-                if (!fun_maxed)
-                {
-                    currentXp += 0.25f;
-                    xpBar.value = currentXp;
-                }
-
-                fun_maxed = true;
-                fun_maxed_text.GetComponent<Renderer>().enabled = true;
-            }
-        }
-
+    public void checkIfMining()
+    {
         if (mining_rock)
         {
             mining.baseValue = currentMining;
@@ -172,7 +186,10 @@ public class CharacterStats : MonoBehaviour
                 mining_maxed_text.GetComponent<Renderer>().enabled = true;
             }
         }
+    }
 
+    public void checkIfWoodcut()
+    {
         if (cutting_wood)
         {
             woodcut.baseValue = currentWoodcut;
@@ -195,7 +212,36 @@ public class CharacterStats : MonoBehaviour
                 woodcut_maxed_text.GetComponent<Renderer>().enabled = true;
             }
         }
+    }
 
+    public void checkIfHavingFun()
+    {
+        if (having_fun)
+        {
+            fun.baseValue = currentFun;
+
+            if (funBar.value < maxFun)
+            {
+                currentFun += fun_xp_gain * Time.deltaTime;
+                funBar.value = currentFun / fun_multiplier;
+            }
+            else
+            {
+                // Jos eka kierros, niin saa xp
+                if (!fun_maxed)
+                {
+                    currentXp += 0.25f;
+                    xpBar.value = currentXp;
+                }
+
+                fun_maxed = true;
+                fun_maxed_text.GetComponent<Renderer>().enabled = true;
+            }
+        }
+    }
+
+    public void checkIfAttacking()
+    {
         if (attacking_blobs)
         {
             attack.baseValue = currentAttack;
@@ -219,7 +265,6 @@ public class CharacterStats : MonoBehaviour
                 peace_sign.GetComponent<Renderer>().enabled = true;
             }
         }
-
     }
 
 }
