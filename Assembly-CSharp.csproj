@@ -65,11 +65,15 @@
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\door_behaviour.cs" />
     <Compile Include="Assets\Scripts\Interaction_Object.cs" />
-    <Compile Include="Assets\Scripts\Player_interact.cs" />
+    <Compile Include="Assets\Scripts\Player_interact_1.cs" />
+    <Compile Include="Assets\Scripts\Player_interact_2.cs" />
+    <Compile Include="Assets\Scripts\Player_interact_3.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\screen_size.cs" />
     <Compile Include="Assets\Scripts\scri.cs" />
     <Compile Include="Assets\Scripts\Stats\CharacterStats.cs" />
+    <Compile Include="Assets\Scripts\Stats\CharacterStats_2.cs" />
+    <Compile Include="Assets\Scripts\Stats\CharacterStats_3.cs" />
     <Compile Include="Assets\Scripts\Stats\Stat.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Panu/Desktop/Projects/DEV_olution/DEV_olution/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_interact : MonoBehaviour
+public class Player_interact_1 : MonoBehaviour
 {
     public GameObject currentInterObject = null;
     public GameObject player;
@@ -18,7 +18,7 @@ public class Player_interact : MonoBehaviour
     private void Update()
     {
         player.GetComponent<CharacterStats>();
-        CharacterStats characterStats = player.GetComponent<CharacterStats>();
+        CharacterStats characterStats_1 = player.GetComponent<CharacterStats>();
 
         if (Input.GetButtonDown("Interact") && currentInterObject)
         {
@@ -29,27 +29,27 @@ public class Player_interact : MonoBehaviour
             // Aktiviteettien efektit menee päälle
             if (currentInterObject.name == "1_bed")
             {
-                characterStats.resting = true;
+                characterStats_1.resting = true;
             }
 
             if (currentInterObject.name == "1_tv")
             {
-                characterStats.having_fun = true;
+                characterStats_1.having_fun = true;
             }
 
             if (currentInterObject.name == "1_rock")
             {
-                characterStats.mining_rock = true;
+                characterStats_1.mining_rock = true;
             }
 
             if (currentInterObject.name == "1_tree")
             {
-                characterStats.cutting_wood = true;
+                characterStats_1.cutting_wood = true;
             }
 
             if (currentInterObject.name == "1_blobs")
             {
-                characterStats.attacking_blobs = true;
+                characterStats_1.attacking_blobs = true;
             }
 
         }
@@ -62,27 +62,27 @@ public class Player_interact : MonoBehaviour
             // Aktiviteettien efektit menee pois
             if (currentInterObject.name == "1_bed")
             {
-                characterStats.resting = false;
+                characterStats_1.resting = false;
             }
 
             if (currentInterObject.name == "1_tv")
             {
-                characterStats.having_fun = false;
+                characterStats_1.having_fun = false;
             }
 
             if (currentInterObject.name == "1_rock")
             {
-                characterStats.mining_rock = false;
+                characterStats_1.mining_rock = false;
             }
 
             if (currentInterObject.name == "1_tree")
             {
-                characterStats.cutting_wood = false;
+                characterStats_1.cutting_wood = false;
             }
 
             if (currentInterObject.name == "1_blobs")
             {
-                characterStats.attacking_blobs = false;
+                characterStats_1.attacking_blobs = false;
             }
         }
 
@@ -90,7 +90,7 @@ public class Player_interact : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Hot_spots"))
+        if (other.CompareTag("Hot_spots"))
         {
             Debug.Log(other.name);
             currentInterObject = other.gameObject;

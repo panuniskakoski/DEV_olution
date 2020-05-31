@@ -56,7 +56,9 @@ public class CharacterStats : MonoBehaviour
 
     public bool gaining_xp = false;
 
-    public bool lvl_up_engaged = false;
+    public bool lvl_up_1_engaged = false;
+    public bool lvl_up_2_engaged = false;
+    public bool lvl_up_3_engaged = false;
 
     // Skillien sliderit
     public Slider restBar;
@@ -124,15 +126,24 @@ public class CharacterStats : MonoBehaviour
     {
         if (xpBar.value >= maxXp)
         {
-            lvl_up.GetComponent<Renderer>().enabled = true;
-
-            
-            // Animaatio lvl_upille
-
-            if (true)
+            if (lvl_up_1_engaged && lvl_up_2_engaged && !lvl_up_3_engaged)
             {
-                SceneManager.LoadScene(1);
+                lvl_up_3_engaged = true;
+                lvl_up.GetComponent<Renderer>().enabled = true;
+                Debug.Log("Sälli on nyt tyytyväinen elämäänsä! Onnittelut!");
             }
+            else if (lvl_up_1_engaged && !lvl_up_2_engaged)
+            {
+                lvl_up_2_engaged = true;
+                lvl_up.GetComponent<Renderer>().enabled = true;
+                SceneManager.LoadScene(2);
+            }
+            else if (!lvl_up_1_engaged)
+            {
+                lvl_up_1_engaged = true;
+                lvl_up.GetComponent<Renderer>().enabled = true;
+                SceneManager.LoadScene(1);
+            } 
         }
     }
 

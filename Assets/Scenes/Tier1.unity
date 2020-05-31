@@ -2672,7 +2672,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1021757843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e54fdd8aee90ef4e9278cc62bdb7cee, type: 3}
+  m_Script: {fileID: 11500000, guid: 06208607e0a78444382b67118e1a478d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentInterObject: {fileID: 0}
@@ -2716,7 +2716,9 @@ MonoBehaviour:
   attacking_blobs: 0
   attacking_maxed: 0
   gaining_xp: 0
-  lvl_up_engaged: 0
+  lvl_up_1_engaged: 0
+  lvl_up_2_engaged: 0
+  lvl_up_3_engaged: 0
   restBar: {fileID: 0}
   funBar: {fileID: 0}
   attackBar: {fileID: 0}
