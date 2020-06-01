@@ -126,23 +126,11 @@ public class CharacterStats_2 : MonoBehaviour
     {
         if (xpBar.value >= maxXp)
         {
-            if (lvl_up_1_engaged && lvl_up_2_engaged && !lvl_up_3_engaged)
-            {
-                lvl_up_3_engaged = true;
-                lvl_up.GetComponent<Renderer>().enabled = true;
-                Debug.Log("Sälli on nyt tyytyväinen elämäänsä! Onnittelut!");
-            }
-            else if (lvl_up_1_engaged && !lvl_up_2_engaged)
+            if (!lvl_up_2_engaged)
             {
                 lvl_up_2_engaged = true;
                 lvl_up.GetComponent<Renderer>().enabled = true;
                 SceneManager.LoadScene(2);
-            }
-            else if (!lvl_up_1_engaged)
-            {
-                lvl_up_1_engaged = true;
-                lvl_up.GetComponent<Renderer>().enabled = true;
-                SceneManager.LoadScene(1);
             }
         }
     }

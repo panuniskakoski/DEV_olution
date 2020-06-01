@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tier3.unity
     guid: cc008290d42e8b54a8c8042b5c20f721
+  - enabled: 1
+    path: Assets/Scenes/Start_menu.unity
+    guid: ff52a0351b05c224d9a2971949845b1e
   m_configObjects: {}

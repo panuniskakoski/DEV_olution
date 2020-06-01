@@ -60,6 +60,8 @@ public class CharacterStats_3 : MonoBehaviour
     public bool lvl_up_2_engaged = false;
     public bool lvl_up_3_engaged = false;
 
+    public bool defeat = false;
+
     // Skillien sliderit
     public Slider restBar;
     public Slider funBar;
@@ -77,6 +79,7 @@ public class CharacterStats_3 : MonoBehaviour
     public GameObject woodcut_maxed_text;
     public GameObject attack_maxed_text;
     public GameObject peace_sign;
+    public GameObject flag;
     public GameObject lvlUp_icon;
 
     public Stat rest;
@@ -106,6 +109,7 @@ public class CharacterStats_3 : MonoBehaviour
 
         attackBar = GameObject.Find("AttackBar").GetComponent<Slider>();
         peace_sign = GameObject.Find("1_sign_sprite");
+        flag = GameObject.Find("3x_flag_1");
 
         xpBar = GameObject.Find("XpBar").GetComponent<Slider>();
     }
@@ -126,23 +130,11 @@ public class CharacterStats_3 : MonoBehaviour
     {
         if (xpBar.value >= maxXp)
         {
-            if (lvl_up_1_engaged && lvl_up_2_engaged && !lvl_up_3_engaged)
+            if (!lvl_up_3_engaged)
             {
                 lvl_up_3_engaged = true;
                 lvl_up.GetComponent<Renderer>().enabled = true;
                 Debug.Log("Sälli on nyt tyytyväinen elämäänsä! Onnittelut!");
-            }
-            else if (lvl_up_1_engaged && !lvl_up_2_engaged)
-            {
-                lvl_up_2_engaged = true;
-                lvl_up.GetComponent<Renderer>().enabled = true;
-                SceneManager.LoadScene(2);
-            }
-            else if (!lvl_up_1_engaged)
-            {
-                lvl_up_1_engaged = true;
-                lvl_up.GetComponent<Renderer>().enabled = true;
-                SceneManager.LoadScene(1);
             }
         }
     }
@@ -164,10 +156,13 @@ public class CharacterStats_3 : MonoBehaviour
             currentRest -= drain_speed * Time.deltaTime;
             rest.baseValue = currentRest;
             restBar.value = (currentRest / 100);
-            if (currentRest < 0)
+            if (currentRest <= 0)
             {
+                this.GetComponent<Renderer>().enabled = false;
                 Debug.Log("Energia loppui");
-                Destroy(player);
+                player.GetComponent<CharacterStats_3>();
+                CharacterStats_3 characterStats_3 = player.GetComponent<CharacterStats_3>();
+                characterStats_3.defeat = true;
                 // Tänne animaatio. Heiluttaa käsiä + teksti "ei jaksa enää"
             }
         }
@@ -274,6 +269,7 @@ public class CharacterStats_3 : MonoBehaviour
                 attacking_maxed = true;
                 attack_maxed_text.GetComponent<Renderer>().enabled = true;
                 peace_sign.GetComponent<Renderer>().enabled = true;
+                flag.GetComponent<Renderer>().enabled = true;
             }
         }
     }
