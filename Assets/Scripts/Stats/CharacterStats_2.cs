@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class CharacterStats_2 : MonoBehaviour
 {
+    [SerializeField]
+    public float delayBeforeSceneLoad = 3f;
+    public float timeElapsed;
+
     // Max valuet
     public const float maxRest = 75.0f;
     public float currentRest = 100.0f;
@@ -87,8 +91,20 @@ public class CharacterStats_2 : MonoBehaviour
     public Stat woodcut;
     public Stat fun;
 
+    Text text;
+    public float goldCounter;
+    public float currentGold = 0;
+
     private void Start()
     {
+        // Koska UI on koodattu typerästi
+        int width = 844; // or something else
+        int height = 475; // or something else
+        bool isFullScreen = false; // should be windowed to run in arbitrary resolution
+        int desiredFPS = 60; // or something else
+
+        Screen.SetResolution(width, height, isFullScreen, desiredFPS);
+
         // Haetaan slider komponentit pelaaja_objektista
         player = GameObject.Find("Player");
 
@@ -108,6 +124,8 @@ public class CharacterStats_2 : MonoBehaviour
         peace_sign = GameObject.Find("1_sign_sprite");
 
         xpBar = GameObject.Find("XpBar").GetComponent<Slider>();
+
+        text = GameObject.Find("GoldCounter").GetComponent<Text>();
     }
 
 
@@ -120,17 +138,24 @@ public class CharacterStats_2 : MonoBehaviour
         checkIfWoodcut();
 
         checkLvlUp();
+
+        // Delay before next scene
+        if (timeElapsed > delayBeforeSceneLoad)
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 
     public void checkLvlUp()
     {
         if (xpBar.value >= maxXp)
         {
+            timeElapsed += Time.deltaTime;
+
             if (!lvl_up_2_engaged)
             {
                 lvl_up_2_engaged = true;
                 lvl_up.GetComponent<Renderer>().enabled = true;
-                SceneManager.LoadScene(2);
             }
         }
     }
@@ -165,6 +190,11 @@ public class CharacterStats_2 : MonoBehaviour
     {
         if (mining_rock)
         {
+            // Gold gain
+            gold.baseValue = currentGold;
+            currentGold += 10 * Time.deltaTime;
+            text.text = (System.Math.Round(currentGold, 2)).ToString();
+
             mining.baseValue = currentMining;
 
             if (miningBar.value < maxMining)
@@ -191,6 +221,11 @@ public class CharacterStats_2 : MonoBehaviour
     {
         if (cutting_wood)
         {
+            // Gold gain
+            gold.baseValue = currentGold;
+            currentGold += 10 * Time.deltaTime;
+            text.text = (System.Math.Round(currentGold, 2)).ToString();
+
             woodcut.baseValue = currentWoodcut;
 
             if (woodcutBar.value < maxWoodcut)
@@ -217,6 +252,11 @@ public class CharacterStats_2 : MonoBehaviour
     {
         if (having_fun)
         {
+            // Gold gain
+            gold.baseValue = currentGold;
+            currentGold += 10 * Time.deltaTime;
+            text.text = (System.Math.Round(currentGold, 2)).ToString();
+
             fun.baseValue = currentFun;
 
             if (funBar.value < maxFun)
@@ -243,6 +283,11 @@ public class CharacterStats_2 : MonoBehaviour
     {
         if (attacking_blobs)
         {
+            // Gold gain
+            gold.baseValue = currentGold;
+            currentGold += 10 * Time.deltaTime;
+            text.text = (System.Math.Round(currentGold, 2)).ToString();
+
             attack.baseValue = currentAttack;
 
             if (attackBar.value < maxAttack)
